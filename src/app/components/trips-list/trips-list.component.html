@@ -1,0 +1,26 @@
+<table mat-table [dataSource]="tripsList">
+  <ng-container matColumnDef="thumbnail">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element"><img [src]="element.thumbnail" alt="Trip thumbnail" /></td>
+  </ng-container>
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">{{element.title}}</td>
+  </ng-container>
+  <ng-container matColumnDef="rating">
+    <th mat-header-cell *matHeaderCellDef>Rating</th>
+    <td mat-cell *matCellDef="let element">{{element.rating}}</td>
+  </ng-container>
+  <ng-container matColumnDef="nrOfRatings">
+    <th mat-header-cell *matHeaderCellDef>Number of ratings</th>
+    <td mat-cell *matCellDef="let element">{{element.nrOfRatings}}</td>
+  </ng-container>
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element" (click)="goToTripDetail(element.id)">
+      Go to detail
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

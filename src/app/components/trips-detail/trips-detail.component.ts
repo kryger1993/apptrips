@@ -2,11 +2,13 @@ import { Component, effect, OnDestroy, OnInit, signal } from '@angular/core';
 import { map, Observable, Subject, take, takeUntil, tap } from 'rxjs';
 import { TripsService } from '../../services/trips.service';
 import { Trip } from '../../dto/trips';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-trips-detail',
-  imports: [],
+  imports: [
+    RouterModule
+  ],
   templateUrl: './trips-detail.component.html',
   styleUrl: './trips-detail.component.sass'
 })

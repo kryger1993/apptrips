@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="thumbnail">
+    <a [routerLink]="['/trips/'+trip().id]">
+      <img [src]="trip().thumbnail" alt="Trip thumbnail" />
+    </a>
+  </div>
+  <div class="title">
+    <a [routerLink]="['/trips/'+trip().id]">
+      {{trip().title}}
+    </a>
+  </div>
+  <div class="right-section">
+    <div class="ratings-box">
+      <div class="rating">
+        {{trip().rating}}
+        <mat-icon fontIcon="star"></mat-icon>
+      </div>
+      <div class="ratings-number">
+        Based on
+        {{trip().nrOfRatings}}
+        reviews.
+      </div>
+    </div>
+    <div class="detali-link-box">
+      <a [routerLink]="['/trips/'+trip().id]">
+        Go to detail
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+html {
+  // this set 1rem = 10px
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* RESET */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* defined in body */
+  box-sizing: inherit;
+}

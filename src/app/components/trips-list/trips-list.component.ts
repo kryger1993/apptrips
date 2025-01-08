@@ -5,6 +5,7 @@ import { Observable, Subject, takeUntil, tap } from 'rxjs';
 import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { MatPaginatorDefaultOptions, MatPaginatorModule, MatPaginatorSelectConfig, PageEvent } from '@angular/material/paginator';
+import { TripCardComponent } from './trip-card/trip-card.component';
 
 // #region Type aliases (1)
 
@@ -22,10 +23,11 @@ type PaginationConfig = {
   selector: 'app-trips-list',
   imports: [
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    TripCardComponent
   ],
   templateUrl: './trips-list.component.html',
-  styleUrl: './trips-list.component.sass'
+  styleUrl: './trips-list.component.scss'
 })
 export class TripsListComponent implements OnInit, OnDestroy {
   // #region Properties (4)
@@ -60,10 +62,6 @@ export class TripsListComponent implements OnInit, OnDestroy {
   // #endregion Constructors (1)
 
   // #region Public Methods (4)
-
-  public goToTripDetail(id: string): void {
-    this.router.navigate([`trips/${id}`]);
-  }
 
   public handlePageChange(event: PageEvent): void {
     this.paginationConfig.page = event.pageIndex;

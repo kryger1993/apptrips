@@ -10,7 +10,7 @@ import { ActivatedRoute, Route, RouterModule } from '@angular/router';
     RouterModule
   ],
   templateUrl: './trips-detail.component.html',
-  styleUrl: './trips-detail.component.sass'
+  styleUrl: './trips-detail.component.scss'
 })
 export class TripsDetailComponent implements OnInit, OnDestroy {
   // #region Properties (3)

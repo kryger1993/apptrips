@@ -1,0 +1,12 @@
+.page {
+  max-width: 50dvw;
+  margin: 0 auto;
+  font-size: var(--default-font-size);
+}
+
+@media (max-width: 1000px) {
+  .page {
+    max-width: 100dvw;
+    margin: 0;
+  }
+}

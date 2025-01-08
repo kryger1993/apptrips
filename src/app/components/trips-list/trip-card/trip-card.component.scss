@@ -1,0 +1,50 @@
+.card {
+  padding: 1.6rem;
+  border: 1px solid lightgrey;
+  border-radius: 0.8rem;
+  display: grid;
+  grid-template-columns: -webkit-min-content -webkit-min-content auto;
+  grid-template-columns: -webkit-min-content -webkit-max-content auto;
+  grid-template-columns: min-content max-content auto;
+  gap: 1.6rem;
+
+  .thumbnail {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    overflow: hidden;
+
+    img {
+      display: block;
+      border-radius: 0.8rem;
+    }
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .ratings-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.8rem;
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        mat-icon {
+          color: orange;
+        }
+      }
+    }
+  }
+}

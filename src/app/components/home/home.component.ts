@@ -9,7 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatSidenavModule
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.sass'
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 }

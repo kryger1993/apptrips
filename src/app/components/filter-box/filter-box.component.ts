@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-filter-box',
   imports: [],
   templateUrl: './filter-box.component.html',
-  styleUrl: './filter-box.component.sass'
+  styleUrl: './filter-box.component.scss'
 })
 export class FilterBoxComponent {
 

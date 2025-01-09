@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-sorting-box',
   imports: [],
   templateUrl: './sorting-box.component.html',
-  styleUrl: './sorting-box.component.sass'
+  styleUrl: './sorting-box.component.scss'
 })
 export class SortingBoxComponent {
-
 }

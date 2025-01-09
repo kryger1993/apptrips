@@ -6,7 +6,7 @@
   <img [src]="tripDetail.image" alt="Trip" />
   <div class="rating">{{tripDetail.rating}} based on {{tripDetail.nrOfRatings}} ratings.</div>
   <div class="tags-container">
-    @for(tag of tripDetail.tags; track tripDetail.tags) {
+    @for(tag of tripDetail.tags; track $index) {
     <span class="tag">{{tag}}</span>
     }
   </div>

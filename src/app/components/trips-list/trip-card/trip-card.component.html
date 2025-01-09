@@ -4,10 +4,14 @@
       <img [src]="trip().thumbnail" alt="Trip thumbnail" />
     </a>
   </div>
-  <div class="title">
-    <a [routerLink]="['/trips/'+trip().id]">
+  <div class="title-price-container">
+    <a class="title" [routerLink]="['/trips/'+trip().id]">
       {{trip().title}}
     </a>
+
+    <div class="price">
+      € {{trip().price}}
+    </div>
   </div>
   <div class="right-section">
     <div class="ratings-box">

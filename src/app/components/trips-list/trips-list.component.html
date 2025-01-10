@@ -1,9 +1,9 @@
 <div class="cards-container">
-  @for(trip of tripsList; track trip.id) {
+  @for(trip of store.trips(); track trip.id) {
   <app-trip-card [trip]="trip"></app-trip-card>
   }
 </div>
-@if(tripsList.length > 0) {
-<mat-paginator [pageSize]="paginationConfig.pageSize" [pageIndex]="paginationConfig.page"
-  [length]="paginationConfig.total" (page)="handlePageChange($event)"></mat-paginator>
+@if(store.trips().length > 0) {
+<mat-paginator [pageSize]="store.pagination().pageSize" [pageIndex]="store.pagination().page - 1"
+  [length]="store.pagination().total" (page)="handlePageChange($event)"></mat-paginator>
 }

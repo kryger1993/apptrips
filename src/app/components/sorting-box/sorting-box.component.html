@@ -1,3 +1,10 @@
 <div class="sorting-container">
-  sorting goes here
+  <mat-form-field subscriptSizing="dynamic">
+    <mat-label>Sort by</mat-label>
+    <mat-select [formControl]="selectedSort">
+      @for(sortOption of sortingOptions; track $index) {
+      <mat-option [value]="sortOption.value">{{sortOption.label}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
 </div>

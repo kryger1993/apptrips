@@ -1,17 +1,23 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AllTripsResponse, Trip, TripDto } from '../dto/trips';
+import { TripsStore } from '../stores/trips.store';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TripsService {
+  // #region Properties (2)
+
+  private http = inject(HttpClient);
+  private store = inject(TripsStore);
+
+  // #endregion Properties (2)
+
   // #region Constructors (1)
 
-  constructor(
-    private readonly http: HttpClient
-  ) { }
+  constructor() { }
 
   // #endregion Constructors (1)
 
@@ -34,17 +40,17 @@ export class TripsService {
     };
   }
 
-  public getAllTrips(page = 1, limit = 10, sortBy?: string, sortOrder?: string): Observable<AllTripsResponse> {
-    let url = `https://iy3ipnv3uc.execute-api.eu-west-1.amazonaws.com/Prod/v1/trips?page=${page}&limit=${limit}`;
-    if (sortBy && sortOrder) {
-      url = url.concat(`&sortBy=${sortBy}&sortOrder=${sortOrder}`);
-    }
-    return this.http.get<AllTripsResponse>(url);
-  }
-
   public getTripDetail(id: string): Observable<TripDto> {
     const url = `https://iy3ipnv3uc.execute-api.eu-west-1.amazonaws.com/Prod/v1/trips/${id}`;
     return this.http.get<TripDto>(url);
+  }
+
+  public getTrips(): Observable<AllTripsResponse> {
+    let url = `https://iy3ipnv3uc.execute-api.eu-west-1.amazonaws.com/Prod/v1/trips?page=${this.store.pagination().page}&limit=${this.store.pagination().pageSize}`;
+    if (this.store.sort().field !== '') {
+      url = url.concat(`&sortBy=${this.store.sort().field}&sortOrder=${this.store.sort().order}`);
+    }
+    return this.http.get<AllTripsResponse>(url);
   }
 
   // #endregion Public Methods (3)

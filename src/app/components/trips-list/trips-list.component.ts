@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { AllTripsResponse, Trip } from '../../dto/trips';
 import { TripsService } from '../../services/trips.service';
 import { Observable, Subject, takeUntil, tap } from 'rxjs';
@@ -6,6 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { MatPaginatorDefaultOptions, MatPaginatorModule, MatPaginatorSelectConfig, PageEvent } from '@angular/material/paginator';
 import { TripCardComponent } from './trip-card/trip-card.component';
+import { TripsStore } from '../../stores/trips.store';
 
 // #region Type aliases (1)
 
@@ -30,7 +31,7 @@ type PaginationConfig = {
   styleUrl: './trips-list.component.scss'
 })
 export class TripsListComponent implements OnInit, OnDestroy {
-  // #region Properties (4)
+  // #region Properties (5)
 
   private unsubscribe = new Subject<void>();
 
@@ -42,9 +43,10 @@ export class TripsListComponent implements OnInit, OnDestroy {
     'action'
   ];
   public paginationConfig: PaginationConfig;
+  public store = inject(TripsStore);
   public tripsList: Trip[] = [];
 
-  // #endregion Properties (4)
+  // #endregion Properties (5)
 
   // #region Constructors (1)
 
@@ -61,10 +63,11 @@ export class TripsListComponent implements OnInit, OnDestroy {
 
   // #endregion Constructors (1)
 
-  // #region Public Methods (4)
+  // #region Public Methods (3)
 
   public handlePageChange(event: PageEvent): void {
-    this.paginationConfig.page = event.pageIndex;
+    // this.paginationConfig.page = event.pageIndex;
+    this.store.updatePagination({ ...this.store.pagination(), page: event.pageIndex + 1 });
     this.getTrips().subscribe();
   }
 
@@ -74,23 +77,26 @@ export class TripsListComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-    this.getTrips().subscribe();
+    if (this.store.trips().length === 0) {
+      this.getTrips().subscribe();
+    }
   }
 
-  // #endregion Public Methods (4)
+  // #endregion Public Methods (3)
 
   // #region Private Methods (1)
 
   private getTrips(): Observable<AllTripsResponse> {
-    return this.tripService.getAllTrips(this.paginationConfig.page + 1, this.paginationConfig.pageSize).pipe(
+    return this.tripService.getTrips().pipe(
       takeUntil(this.unsubscribe),
       tap(data => {
-        this.tripsList = data.items.map(item => this.tripService.convertTripFromBeToFe(item));
-        this.paginationConfig = {
+        this.store.updateTrips(data.items.map(item => this.tripService.convertTripFromBeToFe(item)));
+        // this.tripsList = data.items.map(item => this.tripService.convertTripFromBeToFe(item));
+        this.store.updatePagination({
           pageSize: data.limit,
           total: data.total,
-          page: data.page - 1
-        };
+          page: data.page
+        });
       })
     );
   }

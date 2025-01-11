@@ -1,14 +1,31 @@
 <div class="detail-container">
-  <a class="back" [routerLink]="['/trips']">Back to list</a>
+  <a class="back" [routerLink]="['/trips']">
+    <mat-icon fontIcon="arrow_back_ios"></mat-icon>
+    Back to list
+  </a>
   @if(tripDetail) {
-  <div class="title">{{tripDetail.title}}</div>
-  <div class="description">{{tripDetail.description}}</div>
-  <img [src]="tripDetail.image" alt="Trip" />
-  <div class="rating">{{tripDetail.rating}} based on {{tripDetail.nrOfRatings}} ratings.</div>
-  <div class="tags-container">
-    @for(tag of tripDetail.tags; track $index) {
-    <span class="tag">{{tag}}</span>
-    }
+  <div class="detail">
+    <div>
+      <div class="title">{{tripDetail.title}}</div>
+      <div class="description">{{tripDetail.description}}</div>
+    </div>
+    <img [src]="tripDetail.image" alt="Trip" />
+    <div class="ratings-box">
+      <div class="rating">
+        {{tripDetail.rating}}
+        <mat-icon fontIcon="star"></mat-icon>
+      </div>
+      <div class="ratings-number">
+        Based on
+        {{tripDetail.nrOfRatings}}
+        reviews.
+      </div>
+    </div>
+    <div class="tags-container">
+      @for(tag of tripDetail.tags; track $index) {
+      <span class="tag {{tag}}">{{tag}}</span>
+      }
+    </div>
   </div>
   }
 </div>

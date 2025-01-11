@@ -1,0 +1,98 @@
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  .back {
+    display: flex;
+    align-items: center;
+  }
+
+  .detail {
+    padding: 1.6rem;
+    border: 1px solid lightgrey;
+    border-radius: 0.8rem;
+    display: grid;
+    grid-template-columns: -webkit-max-content -webkit-max-content;
+    grid-template-columns: -webkit-max-content auto -webkit-max-content;
+    grid-template-columns: max-content auto max-content;
+    gap: 1.6rem;
+
+    .title {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .description {
+      font-size: 2rem;
+    }
+
+    .ratings-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.8rem;
+      grid-row: 2;
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        mat-icon {
+          color: orange;
+        }
+      }
+    }
+
+    img {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      border-radius: 0.8rem;
+      grid-row: 2;
+    }
+
+    .tags-container {
+      grid-row: 3;
+      display: flex;
+      gap: 0.8rem;
+
+      .tag {
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.4rem;
+        font-weight: 500;
+
+        &.food {
+          background-color: rgba(255, 0, 0, 0.35);
+          color: red;
+        }
+
+        &.shopping {
+          background-color: rgb(255, 192, 203, 0.35);
+          color: pink;
+        }
+
+        &.culture {
+          background-color: rgb(0, 0, 255, 0.35);
+          color: blue;
+        }
+
+        &.history {
+          background-color: rgb(165, 42, 42, 0.35);
+          color: brown;
+        }
+
+        &.nature {
+          background-color: rgb(0, 128, 0, 0.35);
+          color: green;
+        }
+
+        &.business {
+          background-color: rgb(128, 128, 128, 0.35);
+          color: gray;
+        }
+      }
+    }
+  }
+}

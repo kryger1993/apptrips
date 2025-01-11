@@ -2,12 +2,14 @@ import { Component, effect, OnDestroy, OnInit, signal } from '@angular/core';
 import { map, Observable, Subject, take, takeUntil, tap } from 'rxjs';
 import { TripsService } from '../../services/trips.service';
 import { Trip } from '../../dto/trips';
-import { ActivatedRoute, Route, RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-trips-detail',
   imports: [
-    RouterModule
+    RouterModule,
+    MatIconModule
   ],
   templateUrl: './trips-detail.component.html',
   styleUrl: './trips-detail.component.scss'

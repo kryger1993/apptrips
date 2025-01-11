@@ -1,11 +1,11 @@
 <mat-sidenav-container>
   <mat-sidenav mode="side" opened>
     <div class="sidenav">
-      <app-sorting-box></app-sorting-box>
+      <app-sorting-box (refreshList)="getTrips()"></app-sorting-box>
       <app-filter-box></app-filter-box>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-trips-list></app-trips-list>
+    <app-trips-list (refreshList)="getTrips()"></app-trips-list>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -13,9 +13,8 @@
     border: 1px solid lightgrey;
     border-radius: 0.8rem;
     display: grid;
-    grid-template-columns: -webkit-max-content -webkit-max-content;
-    grid-template-columns: -webkit-max-content auto -webkit-max-content;
-    grid-template-columns: max-content auto max-content;
+    grid-template-columns: -webkit-max-content auto;
+    grid-template-columns: max-content auto;
     gap: 1.6rem;
 
     .title {
@@ -32,7 +31,8 @@
       flex-direction: column;
       align-items: flex-end;
       gap: 0.8rem;
-      grid-row: 2;
+      grid-row: 1;
+      grid-column: 2;
 
       .rating {
         display: flex;
@@ -53,44 +53,87 @@
       grid-row: 2;
     }
 
-    .tags-container {
-      grid-row: 3;
+    .trip-info {
+      grid-row: 2;
       display: flex;
-      gap: 0.8rem;
+      flex-direction: column;
+      justify-content: space-between;
 
-      .tag {
-        padding: 0.4rem 0.6rem;
-        border-radius: 0.4rem;
-        font-weight: 500;
+      .mix-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 1.6rem;
 
-        &.food {
-          background-color: rgba(255, 0, 0, 0.35);
-          color: red;
+        .description {
+          font-size: 2rem;
+          margin-bottom: 2rem;
         }
 
-        &.shopping {
-          background-color: rgb(255, 192, 203, 0.35);
-          color: pink;
+        .tags-container {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .tags-list {
+            display: flex;
+            gap: 0.8rem;
+
+            .tag {
+              padding: 0.4rem 0.8rem;
+              border-radius: 0.4rem;
+              font-weight: 500;
+              height: -webkit-fit-content;
+              height: -moz-fit-content;
+              height: fit-content;
+
+              &.food {
+                background-color: rgba(255, 0, 0, 0.15);
+                color: red;
+              }
+
+              &.shopping {
+                background-color: rgb(238, 130, 238, 0.15);
+                color: violet;
+              }
+
+              &.culture {
+                background-color: rgb(0, 0, 255, 0.15);
+                color: blue;
+              }
+
+              &.history {
+                background-color: rgb(165, 42, 42, 0.15);
+                color: brown;
+              }
+
+              &.nature {
+                background-color: rgb(0, 128, 0, 0.15);
+                color: green;
+              }
+
+              &.business {
+                background-color: rgb(128, 128, 128, 0.15);
+                color: gray;
+              }
+            }
+          }
+        }
+      }
+
+      .price-and-buy {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-end;
+
+        .price {
+          font-size: 2rem;
         }
 
-        &.culture {
-          background-color: rgb(0, 0, 255, 0.35);
-          color: blue;
-        }
-
-        &.history {
-          background-color: rgb(165, 42, 42, 0.35);
-          color: brown;
-        }
-
-        &.nature {
-          background-color: rgb(0, 128, 0, 0.35);
-          color: green;
-        }
-
-        &.business {
-          background-color: rgb(128, 128, 128, 0.35);
-          color: gray;
+        .taxes-info {
+          color: grey;
+          font-size: 1.2rem;
         }
       }
     }

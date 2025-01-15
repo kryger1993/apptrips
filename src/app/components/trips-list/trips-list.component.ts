@@ -18,19 +18,11 @@ import { PaginationObj } from '../../dto/store';
   templateUrl: './trips-list.component.html',
   styleUrl: './trips-list.component.scss'
 })
-export class TripsListComponent implements OnInit {
+export class TripsListComponent {
   // #region Properties (4)
 
-  public displayedColumns = [
-    'thumbnail',
-    'title',
-    'rating',
-    'nrOfRatings',
-    'action'
-  ];
   public refreshList = output();
   public store = inject(TripsStore);
-  public tripsList: Trip[] = [];
 
   // #endregion Properties (4)
 
@@ -45,12 +37,6 @@ export class TripsListComponent implements OnInit {
   public handlePageChange(event: PageEvent): void {
     this.store.updatePagination({ ...this.store.pagination(), page: event.pageIndex + 1 });
     this.refreshList.emit();
-  }
-
-  public ngOnInit(): void {
-    if (this.store.trips().length === 0) {
-      this.refreshList.emit();
-    }
   }
 
   // #endregion Public Methods (2)

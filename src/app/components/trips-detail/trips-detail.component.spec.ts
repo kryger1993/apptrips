@@ -8,7 +8,7 @@ import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { ActivatedRoute } from '@angular/router';
 
 const mockTripsService: Partial<TripsService> = {
-  getTripDetail: jasmine.createSpy().and.returnValue(of(
+  getTripDetail: () => of(
     {
       id: "57be77a0-a37f-44f9-902d-445d78d781ee",
       title: "Trip to Budapest",
@@ -26,7 +26,7 @@ const mockTripsService: Partial<TripsService> = {
       thumbnailUrl: "https://picsum.photos/id/511/200/200",
       imageUrl: "https://picsum.photos/id/511/600/800",
       creationDate: new Date("2024-10-20T19:40:20.747Z")
-    })),
+    }),
   convertTripFromBeToFe: (dtoTrip) => {
     return {
       id: dtoTrip.id,

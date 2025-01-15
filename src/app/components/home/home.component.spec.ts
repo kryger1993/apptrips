@@ -39,22 +39,18 @@ const mockTripsService: Partial<TripsService> = {
   })),
   convertTripFromBeToFe: (dtoTrip) => {
     return {
-      id: "57be77a0-a37f-44f9-902d-445d78d781ee",
-      title: "Trip to Budapest",
-      description: "A beautiful journey through the city of lights",
-      price: 4096.2,
-      rating: 4.1,
-      nrOfRatings: 363,
-      vertical: "train",
-      tags: [
-        "food",
-        "history",
-        "culture"
-      ],
-      co2: 297.8,
-      thumbnail: "https://picsum.photos/id/511/200/200",
-      image: "https://picsum.photos/id/511/600/800",
-      creationDate: new Date("2024-10-20T19:40:20.747Z")
+      id: dtoTrip.id,
+      title: dtoTrip.title,
+      description: dtoTrip.description,
+      price: dtoTrip.price,
+      rating: dtoTrip.rating,
+      nrOfRatings: dtoTrip.nrOfRatings,
+      vertical: dtoTrip.verticalType,
+      tags: [...dtoTrip.tags],
+      co2: dtoTrip.co2,
+      thumbnail: dtoTrip.thumbnailUrl,
+      image: dtoTrip.imageUrl,
+      creationDate: dtoTrip.creationDate
     };
   }
 };

@@ -48,7 +48,7 @@ export class TripsDetailComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-    this.retrieveIdFromUrlParams();
+    this.retrieveIdFromUrlParams().subscribe();
   }
 
   // #endregion Public Methods (2)
@@ -63,14 +63,14 @@ export class TripsDetailComponent implements OnInit, OnDestroy {
   }
 
   private retrieveIdFromUrlParams() {
-    this.route.params.pipe(
-      takeUntil(this.unsubscribe),
+    return this.route.params.pipe(
+      take(1),
       tap(p => {
         if (p['id']) {
           this.tripId.set(p['id']);
         }
       })
-    ).subscribe();
+    );
   }
 
   // #endregion Private Methods (2)

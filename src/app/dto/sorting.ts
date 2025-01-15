@@ -1,12 +1,15 @@
+// #region Interfaces (2)
 
 export interface SortingOption {
-  label: string;
-  value: SortingValue | null;
-}
-;
+  // #region Properties (2)
 
-export interface SortingValue {
+  id: number;
+  label: string;
 
   field: string;
   order: string;
+
+  // #endregion Properties (2)
 }
+
+// #endregion Interfaces (2)

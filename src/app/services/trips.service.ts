@@ -47,8 +47,8 @@ export class TripsService {
 
   public getTrips(): Observable<AllTripsResponse> {
     let url = `https://iy3ipnv3uc.execute-api.eu-west-1.amazonaws.com/Prod/v1/trips?page=${this.store.pagination().page}&limit=${this.store.pagination().pageSize}`;
-    if (this.store.sort().field !== '') {
-      url = url.concat(`&sortBy=${this.store.sort().field}&sortOrder=${this.store.sort().order}`);
+    if (this.store.sort()) {
+      url = url.concat(`&sortBy=${this.store.sort()?.field}&sortOrder=${this.store.sort()?.order}`);
     }
     return this.http.get<AllTripsResponse>(url);
   }

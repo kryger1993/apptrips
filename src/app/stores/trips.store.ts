@@ -1,11 +1,12 @@
-import { TripsListState, SortObj, PaginationObj } from "../dto/store";
+import { SortingOption } from "../dto/sorting";
+import { TripsListState, PaginationObj } from "../dto/store";
 import { Trip } from "../dto/trips";
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 
 const initialState: TripsListState = {
   trips: [],
   isLoading: false,
-  sort: { field: '', order: 'ASC' },
+  sort: null,
   pagination: { page: 1, total: 0, pageSize: 10 }
 };
 export const TripsStore = signalStore(
@@ -18,7 +19,7 @@ export const TripsStore = signalStore(
     updateLoading(isLoading: boolean): void {
       patchState(store, () => ({ isLoading }));
     },
-    updateSort(sort: SortObj): void {
+    updateSort(sort: SortingOption | null): void {
       patchState(store, () => ({ sort }));
     },
     updatePagination(pagination: PaginationObj): void {

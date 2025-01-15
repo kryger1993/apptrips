@@ -1,3 +1,4 @@
+import { SortingOption } from "./sorting";
 import { Trip } from "./trips";
 
 export interface PaginationObj {
@@ -6,14 +7,9 @@ export interface PaginationObj {
   pageSize: number;
 }
 
-export interface SortObj {
-  field: string;
-  order: 'ASC' | 'DESC';
-};
-
 export interface TripsListState {
   trips: Trip[];
   isLoading: boolean;
-  sort: SortObj;
+  sort: SortingOption | null;
   pagination: PaginationObj;
 };

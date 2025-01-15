@@ -4,7 +4,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { Subject, takeUntil, tap } from 'rxjs';
 import { TripsStore } from '../../stores/trips.store';
 import { TripsService } from '../../services/trips.service';
-import { SortingOption, SortingValue } from "../../dto/sorting";
+import { SortingOption } from "../../dto/sorting";
 
 @Component({
   selector: 'app-sorting-box',
@@ -24,43 +24,34 @@ export class SortingBoxComponent {
   public selectedSort: FormControl;
   public sortingOptions: SortingOption[] = [
     {
-      label: '',
-      value: null
-    },
-    {
+      id: 0,
       label: 'sorting.priceAsc',
-      value: {
-        field: 'price',
-        order: 'ASC'
-      }
+      field: 'price',
+      order: 'ASC'
     },
     {
+      id: 1,
       label: 'sorting.priceDesc',
-      value: {
-        field: 'price',
-        order: 'DESC'
-      }
+      field: 'price',
+      order: 'DESC'
     },
     {
+      id: 2,
       label: 'sorting.dateAsc',
-      value: {
-        field: 'creationDate',
-        order: 'ASC'
-      }
+      field: 'creationDate',
+      order: 'ASC'
     },
     {
+      id: 3,
       label: 'sorting.dateDesc',
-      value: {
-        field: 'creationDate',
-        order: 'DESC'
-      }
+      field: 'creationDate',
+      order: 'DESC'
     },
     {
+      id: 4,
       label: 'sorting.title',
-      value: {
-        field: 'title',
-        order: 'ASC'
-      }
+      field: 'title',
+      order: 'ASC'
     }
   ];
   public store = inject(TripsStore);
@@ -70,33 +61,29 @@ export class SortingBoxComponent {
   // #region Constructors (1)
 
   constructor() {
-    this.selectedSort = new FormControl(this.getSortOption(this.store.sort().field));
+    this.selectedSort = new FormControl(this.getSortOption(this.store.sort()?.id));
 
     this.hendleSortChanges().subscribe();
+  }
+
+  // #endregion Constructors (1)
+
+  // #region Private Methods (2)
+
+  private getSortOption(sortOptionId?: number): SortingOption | null {
+    return this.sortingOptions.find(item => item.id === sortOptionId) || null;
   }
 
   private hendleSortChanges() {
     return this.selectedSort.valueChanges.pipe(
       takeUntil(this.unsubscribe),
       tap(value => {
-        if (value) {
-          this.store.updateSort(value);
-        } else {
-          this.store.updateSort({ field: '', order: 'ASC' });
-        }
+        this.store.updateSort(value);
 
         this.refreshList.emit();
       })
     );
   }
 
-  // #endregion Constructors (1)
-
-  // #region Private Methods (1)
-
-  private getSortOption(field: string): SortingValue | null {
-    return this.sortingOptions.find(item => item.value?.field === field)?.value || this.sortingOptions[0].value;
-  }
-
-  // #endregion Private Methods (1)
+  // #endregion Private Methods (2)
 }

@@ -13,14 +13,15 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './trip-card.component.scss'
 })
 export class TripCardComponent {
+  // #region Properties (1)
 
   public trip = input.required<Trip>();
 
-  constructor(
-    private router: Router
-  ) { }
+  // #endregion Properties (1)
 
-  public goToTripDetail(id: string): void {
-    this.router.navigate([`trips/${id}`]);
-  }
+  // #region Constructors (1)
+
+  constructor() {}
+
+  // #endregion Constructors (1)
 }

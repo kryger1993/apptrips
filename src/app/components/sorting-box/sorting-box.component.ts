@@ -16,7 +16,7 @@ import { SortingOption, SortingValue } from "../../dto/sorting";
   styleUrl: './sorting-box.component.scss'
 })
 export class SortingBoxComponent {
-  // #region Properties (6)
+  // #region Properties (5)
 
   private unsubscribe = new Subject<void>();
 
@@ -64,16 +64,19 @@ export class SortingBoxComponent {
     }
   ];
   public store = inject(TripsStore);
-  public tripsService = inject(TripsService);
 
-  // #endregion Properties (6)
+  // #endregion Properties (5)
 
   // #region Constructors (1)
 
   constructor() {
     this.selectedSort = new FormControl(this.getSortOption(this.store.sort().field));
 
-    this.selectedSort.valueChanges.pipe(
+    this.hendleSortChanges().subscribe();
+  }
+
+  private hendleSortChanges() {
+    return this.selectedSort.valueChanges.pipe(
       takeUntil(this.unsubscribe),
       tap(value => {
         if (value) {
@@ -84,7 +87,7 @@ export class SortingBoxComponent {
 
         this.refreshList.emit();
       })
-    ).subscribe();
+    );
   }
 
   // #endregion Constructors (1)

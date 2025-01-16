@@ -1,0 +1,49 @@
+.tags-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .tags-list {
+    display: flex;
+    gap: 0.8rem;
+
+    .tag {
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.4rem;
+      font-weight: 500;
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
+      height: fit-content;
+
+      &.food {
+        background-color: rgba(255, 0, 0, 0.15);
+        color: red;
+      }
+
+      &.shopping {
+        background-color: rgb(238, 130, 238, 0.15);
+        color: violet;
+      }
+
+      &.culture {
+        background-color: rgb(0, 0, 255, 0.15);
+        color: blue;
+      }
+
+      &.history {
+        background-color: rgb(165, 42, 42, 0.15);
+        color: brown;
+      }
+
+      &.nature {
+        background-color: rgb(0, 128, 0, 0.15);
+        color: green;
+      }
+
+      &.business {
+        background-color: rgb(128, 128, 128, 0.15);
+        color: gray;
+      }
+    }
+  }
+}

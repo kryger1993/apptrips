@@ -4,14 +4,12 @@
       <img [src]="trip().thumbnail" alt="Trip thumbnail" />
     </a>
   </div>
-  <div class="title-price-container">
+  <div class="title-tags-container">
     <a class="title" [routerLink]="['/trips/'+trip().id]">
       {{trip().title}}
     </a>
 
-    <div class="price">
-      € {{trip().price}}
-    </div>
+    <app-tags-list [tags]="trip().tags" [withText]="false"></app-tags-list>
   </div>
   <div class="right-section">
     <div class="ratings-box">
@@ -25,10 +23,9 @@
         reviews.
       </div>
     </div>
-    <div class="detali-link-box">
-      <a [routerLink]="['/trips/'+trip().id]">
-        Go to detail
-      </a>
+
+    <div class="price">
+      € {{trip().price}}
     </div>
   </div>
 </div>

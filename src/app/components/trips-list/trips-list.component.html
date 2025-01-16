@@ -1,9 +1,11 @@
-<div class="cards-container">
-  @for(trip of store.trips(); track trip.id) {
-  <app-trip-card [trip]="trip"></app-trip-card>
+<div class="list">
+  <div class="cards-container">
+    @for(trip of store.trips(); track trip.id) {
+    <app-trip-card [trip]="trip"></app-trip-card>
+    }
+  </div>
+  @if(store.trips().length > 0) {
+  <mat-paginator [pageSize]="store.pagination().pageSize" [pageIndex]="store.pagination().page - 1"
+    [length]="store.pagination().total" (page)="handlePageChange($event)"></mat-paginator>
   }
 </div>
-@if(store.trips().length > 0) {
-<mat-paginator [pageSize]="store.pagination().pageSize" [pageIndex]="store.pagination().page - 1"
-  [length]="store.pagination().total" (page)="handlePageChange($event)"></mat-paginator>
-}

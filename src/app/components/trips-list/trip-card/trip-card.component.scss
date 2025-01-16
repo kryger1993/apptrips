@@ -20,17 +20,16 @@
     }
   }
 
-  .title-price-container {
+  .title-tags-container {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
 
     .title {
-      font-size: 2.5rem;
-    }
-
-    .price {
-      font-size: 2rem;
+      font-size: 3.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: #3560ab;
     }
   }
 
@@ -55,6 +54,12 @@
           color: orange;
         }
       }
+    }
+
+    .price {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #00bcd6;
     }
   }
 }

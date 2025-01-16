@@ -29,16 +29,7 @@
           {{tripDetail.description}}
         </p>
 
-        <div class="tags-container">
-          <p class="tags-description">
-            Our costumers say this is one of the best for:
-          </p>
-          <div class="tags-list">
-            @for(tag of tripDetail.tags; track $index) {
-            <span class="tag {{tag}}">{{tag}}</span>
-            }
-          </div>
-        </div>
+        <app-tags-list [tags]="tripDetail.tags"></app-tags-list>
 
         <div class="co2-info">
           <p>

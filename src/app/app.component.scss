@@ -4,6 +4,19 @@
   font-size: var(--default-font-size);
 }
 
+.spinner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
 @media (max-width: 1000px) {
   .page {
     max-width: 100dvw;

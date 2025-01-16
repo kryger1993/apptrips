@@ -1,15 +1,18 @@
-import { Component, effect, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, effect, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { map, Observable, Subject, take, takeUntil, tap } from 'rxjs';
 import { TripsService } from '../../services/trips.service';
 import { Trip } from '../../dto/trips';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { TripsStore } from '../../stores/trips.store';
+import { TagsListComponent } from '../tags-list/tags-list.component';
 
 @Component({
   selector: 'app-trips-detail',
   imports: [
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    TagsListComponent
   ],
   templateUrl: './trips-detail.component.html',
   styleUrl: './trips-detail.component.scss'
@@ -21,6 +24,7 @@ export class TripsDetailComponent implements OnInit, OnDestroy {
 
   public tripDetail!: Trip;
   public tripId = signal('');
+  public store = inject(TripsStore);
 
   // #endregion Properties (3)
 
@@ -33,7 +37,10 @@ export class TripsDetailComponent implements OnInit, OnDestroy {
     effect(() => {
       this.getTripDetail(this.tripId()).pipe(
         take(1),
-        tap(trip => this.tripDetail = trip)
+        tap(trip => {
+          this.tripDetail = trip;
+          this.store.updateLoading(false);
+        })
       ).subscribe();
     });
   }
@@ -56,6 +63,8 @@ export class TripsDetailComponent implements OnInit, OnDestroy {
   // #region Private Methods (2)
 
   private getTripDetail(id: string): Observable<Trip> {
+    this.store.updateLoading(true);
+
     return this.tripsService.getTripDetail(id).pipe(
       takeUntil(this.unsubscribe),
       map(resp => this.tripsService.convertTripFromBeToFe(resp))

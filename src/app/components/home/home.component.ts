@@ -3,9 +3,10 @@ import { TripsListComponent } from '../trips-list/trips-list.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SortingBoxComponent } from '../sorting-box/sorting-box.component';
 import { FilterBoxComponent } from '../filter-box/filter-box.component';
-import { finalize, Subject, take, takeUntil, tap } from 'rxjs';
+import { delay, finalize, Subject, take, takeUntil, tap } from 'rxjs';
 import { TripsStore } from '../../stores/trips.store';
 import { TripsService } from '../../services/trips.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ import { TripsService } from '../../services/trips.service';
     TripsListComponent,
     MatSidenavModule,
     SortingBoxComponent,
-    FilterBoxComponent
+    FilterBoxComponent,
+    MatProgressSpinnerModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

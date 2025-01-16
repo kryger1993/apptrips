@@ -1,0 +1,12 @@
+<div class="tags-container">
+  @if(withText()) {
+  <p class="tags-description">
+    Our costumers say this is one of the best for:
+  </p>
+  }
+  <div class="tags-list">
+    @for(tag of tags(); track $index) {
+    <span class="tag {{tag}}">{{tag}}</span>
+    }
+  </div>
+</div>

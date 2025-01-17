@@ -1,4 +1,4 @@
-<div class="detail-container main-content">
+<div class="detail-container">
   <a class="back" [routerLink]="['/trips']">
     <mat-icon fontIcon="arrow_back_ios"></mat-icon>
     <ng-container i18n>
@@ -10,7 +10,7 @@
     <!-- column 1 row 1 -->
     <div class="title">{{tripDetail.title}}</div>
     <!-- column 1 row 2 -->
-    <img [src]="tripDetail.image" alt="Trip" />
+    <img [src]="image" alt="Trip" (error)="image = 'https://picsum.photos/600/800'" />
 
     <!-- column 2 row 1 -->
     <div class="ratings-box">
@@ -33,7 +33,7 @@
 
         <div class="co2-info">
           <p>
-            {{'app-trip.consumesIntro' | translate}}
+            {{'app.trip.consumesIntro' | translate}}
           </p>
           <div class="co2-consume">
             {{ 'app.trip.consumesText' | translate:{co2:tripDetail.co2} }}
@@ -46,10 +46,10 @@
           € {{tripDetail.price}}
         </span>
         <span class="taxes-info">
-          {{'app-trip.taxes' | translate}}
+          {{'app.trip.taxes' | translate}}
         </span>
         <button>
-          {{'app-trip.buy' | translate}}
+          {{'app.trip.buy' | translate}}
         </button>
       </div>
     </div>

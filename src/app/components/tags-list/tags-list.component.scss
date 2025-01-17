@@ -44,6 +44,21 @@
         background-color: rgb(128, 128, 128, 0.15);
         color: gray;
       }
+
+      &.station {
+        background-color: rgb(255, 165, 0, 0.15);
+        color: orange;
+      }
+
+      &.airport {
+        background-color: rgb(135, 206, 235, 0.15);
+        color: skyblue;
+      }
+
+      &.city {
+        background-color: rgb(128, 0, 128, 0.15);
+        color: purple;
+      }
     }
   }
 }

@@ -17,19 +17,18 @@
     img {
       display: block;
       border-radius: 0.8rem;
+      min-width: 20rem;
     }
   }
 
   .title-tags-container {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    justify-content: space-between;
 
     .title {
       font-size: 3.5rem;
       font-weight: 600;
-      text-decoration: none;
-      color: #3560ab;
     }
   }
 

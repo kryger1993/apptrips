@@ -1,0 +1,33 @@
+button {
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: #3560ab;
+  font-weight: 600;
+  color: white;
+  border-radius: 1rem;
+  font-size: 2rem;
+
+  &:hover {
+    background-color: #4e7ac5;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 2px solid #4e7ac5;
+    outline-offset: 2px;
+  }
+}
+
+a {
+  color: #3560ab;
+  text-decoration: none;
+
+  &:hover {
+    color: #4e7ac5;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    color: #3560ab;
+  }
+}

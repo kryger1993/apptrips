@@ -6,6 +6,8 @@
   .back {
     display: flex;
     align-items: center;
+    padding-top: 1.6rem;
+    font-weight: 500;
   }
 
   .detail {
@@ -53,6 +55,7 @@
       width: -webkit-fit-content;
       width: -moz-fit-content;
       width: fit-content;
+      min-width: 60rem;
       border-radius: 0.8rem;
       grid-row: 2;
     }
@@ -72,6 +75,17 @@
         .description {
           font-size: 2rem;
           margin-bottom: 2rem;
+        }
+
+        .co2-info {
+          border: 2px solid #3560ab;
+          padding: 1.6rem;
+          border-radius: 0.4rem;
+          font-size: 1.4rem;
+
+          .co2-consume {
+            margin-top: 1.6rem;
+          }
         }
       }
 

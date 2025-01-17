@@ -6,13 +6,15 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { TripsStore } from '../../stores/trips.store';
 import { TagsListComponent } from '../tags-list/tags-list.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-trips-detail',
   imports: [
     RouterModule,
     MatIconModule,
-    TagsListComponent
+    TagsListComponent,
+    TranslatePipe
   ],
   templateUrl: './trips-detail.component.html',
   styleUrl: './trips-detail.component.scss'

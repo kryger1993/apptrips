@@ -3,13 +3,15 @@ import { Trip } from '../../../dto/trips';
 import { Router, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { TagsListComponent } from '../../tags-list/tags-list.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-trip-card',
   imports: [
     RouterModule,
     MatIconModule,
-    TagsListComponent
+    TagsListComponent,
+    TranslatePipe
   ],
   templateUrl: './trip-card.component.html',
   styleUrl: './trip-card.component.scss'

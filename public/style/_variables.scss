@@ -1,4 +1,14 @@
+@use '@angular/material' as mat;
+
 :root {
   --default-font-size: 1.6rem;
   --mat-sys-body-large-size: 1.6rem;
+  --mat-sys-background: #fff;
+  --mat-sys-surface: #fff;
+
+  // for select colors
+  // --mat-sys-surface-container: #fff;
+  // --mat-sys-surface-variant: #fff;
+
+  // @include mat.select-overrides((panel-background-color: white));
 }

@@ -3,10 +3,12 @@ import { TripsListComponent } from '../trips-list/trips-list.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SortingBoxComponent } from '../sorting-box/sorting-box.component';
 import { FilterBoxComponent } from '../filter-box/filter-box.component';
-import { delay, finalize, Subject, take, takeUntil, tap } from 'rxjs';
+import { finalize, Subject, takeUntil, tap } from 'rxjs';
 import { TripsStore } from '../../stores/trips.store';
 import { TripsService } from '../../services/trips.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +17,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSidenavModule,
     SortingBoxComponent,
     FilterBoxComponent,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatIconModule,
+    TranslatePipe
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

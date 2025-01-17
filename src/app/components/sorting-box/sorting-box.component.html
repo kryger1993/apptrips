@@ -1,10 +1,10 @@
 <div class="sorting-container">
   <mat-form-field subscriptSizing="dynamic">
-    <mat-label>Sort by</mat-label>
+    <mat-label>{{'app.sidenav.sortingBox.label' | translate}}</mat-label>
     <mat-select [formControl]="selectedSort">
       <mat-option [value]="null"></mat-option>
       @for(sortOption of sortingOptions; track $index) {
-      <mat-option [value]="sortOption">{{sortOption.label}}</mat-option>
+      <mat-option [value]="sortOption">{{'app.sidenav.sortingBox.options.' + sortOption.label | translate}}</mat-option>
       }
     </mat-select>
   </mat-form-field>

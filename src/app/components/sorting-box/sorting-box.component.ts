@@ -5,12 +5,14 @@ import { Subject, takeUntil, tap } from 'rxjs';
 import { TripsStore } from '../../stores/trips.store';
 import { TripsService } from '../../services/trips.service';
 import { SortingOption } from "../../dto/sorting";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sorting-box',
   imports: [
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslatePipe
   ],
   templateUrl: './sorting-box.component.html',
   styleUrl: './sorting-box.component.scss'
@@ -25,31 +27,31 @@ export class SortingBoxComponent {
   public sortingOptions: SortingOption[] = [
     {
       id: 0,
-      label: 'sorting.priceAsc',
+      label: 'priceAsc',
       field: 'price',
       order: 'ASC'
     },
     {
       id: 1,
-      label: 'sorting.priceDesc',
+      label: 'priceDesc',
       field: 'price',
       order: 'DESC'
     },
     {
       id: 2,
-      label: 'sorting.dateAsc',
+      label: 'dateAsc',
       field: 'creationDate',
       order: 'ASC'
     },
     {
       id: 3,
-      label: 'sorting.dateDesc',
+      label: 'dateDesc',
       field: 'creationDate',
       order: 'DESC'
     },
     {
       id: 4,
-      label: 'sorting.title',
+      label: 'title',
       field: 'title',
       order: 'ASC'
     }

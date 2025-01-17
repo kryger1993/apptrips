@@ -10,6 +10,7 @@ import { of } from 'rxjs';
 import { signal } from '@angular/core';
 import { Trip } from '../../dto/trips';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 const mockTripsService: Partial<TripsService> = {
   getTrips: jasmine.createSpy().and.returnValue(of({
@@ -36,6 +37,24 @@ const mockTripsService: Partial<TripsService> = {
     page: 1,
     total: 1,
     limit: 10
+  })),
+  getRandomTrip: jasmine.createSpy().and.returnValue(of({
+    id: "57be77a0-a37f-44f9-902d-445d78d781ee",
+    title: "Trip to Budapest",
+    description: "A beautiful journey through the city of lights",
+    price: 4096.2,
+    rating: 4.1,
+    nrOfRatings: 363,
+    verticalType: "train",
+    tags: [
+      "food",
+      "history",
+      "culture"
+    ],
+    co2: 297.8,
+    thumbnailUrl: "https://picsum.photos/id/511/200/200",
+    imageUrl: "https://picsum.photos/id/511/600/800",
+    creationDate: new Date("2024-10-20T19:40:20.747Z")
   })),
   convertTripFromBeToFe: (dtoTrip) => {
     return {
@@ -81,7 +100,10 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeComponent],
+      imports: [
+        HomeComponent,
+        TranslateModule.forRoot({})
+      ],
       providers: [
         provideHttpClient(),
         provideHttpClientTesting(),
@@ -96,6 +118,9 @@ describe('HomeComponent', () => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    // reset store trips
+    mockTripsStore.updateTrips([]);
   });
 
   it('should create', () => {
@@ -137,5 +162,6 @@ describe('HomeComponent', () => {
       image: "https://picsum.photos/id/511/600/800",
       creationDate: new Date("2024-10-20T19:40:20.747Z")
     }]);
+
   });
 });

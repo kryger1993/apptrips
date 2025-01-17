@@ -10,10 +10,11 @@ describe('TagsListComponent', () => {
     await TestBed.configureTestingModule({
       imports: [TagsListComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TagsListComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('tags', ['culture', 'history']);
     fixture.detectChanges();
   });
 

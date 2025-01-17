@@ -7,21 +7,10 @@ import { TripsStore } from '../../stores/trips.store';
 import { signal } from '@angular/core';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { SortingOption } from '../../dto/sorting';
+import { TranslateModule } from '@ngx-translate/core';
 
 const mockTripsStore = {
-  // isLoading: signal(false),
   sort: signal<SortingOption | null>(null),
-  // trips: signal<Trip[]>([]),
-  // pagination: signal({ page: 1, total: 0, pageSize: 10 }),
-  // updateLoading: (isLoading: boolean) => {
-  //   mockTripsStore.isLoading.set(isLoading);
-  // },
-  // updateTrips: (trips: Trip[]) => {
-  //   mockTripsStore.trips.set(trips);
-  // },
-  // updatePagination: (pagination: { page: number, total: number, pageSize: number; }) => {
-  //   mockTripsStore.pagination.set(pagination);
-  // }
   updateSort: (sort: SortingOption | null) => {
     mockTripsStore.sort.set(sort);
   }
@@ -34,7 +23,8 @@ describe('SortingBoxComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        SortingBoxComponent
+        SortingBoxComponent,
+        TranslateModule.forRoot({})
       ],
       providers: [
         provideHttpClient(),
@@ -48,6 +38,9 @@ describe('SortingBoxComponent', () => {
     fixture = TestBed.createComponent(SortingBoxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    // resetting FormControl
+    component.selectedSort.reset();
   });
 
   it('should create', () => {
@@ -72,8 +65,5 @@ describe('SortingBoxComponent', () => {
     component.selectedSort.setValue(result);
 
     expect(mockTripsStore.sort()).toEqual(result);
-
-    // resetting FormControl
-    component.selectedSort.reset();
   });
 });

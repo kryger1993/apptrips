@@ -6,6 +6,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 const mockTripsService: Partial<TripsService> = {
   getTripDetail: () => of(
@@ -55,7 +56,10 @@ describe('TripsDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TripsDetailComponent],
+      imports: [
+        TripsDetailComponent,
+        TranslateModule.forRoot({})
+      ],
       providers: [
         provideHttpClient(),
         provideHttpClientTesting(),

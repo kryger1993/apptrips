@@ -9,6 +9,7 @@ import { TripsService } from '../../services/trips.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslatePipe } from '@ngx-translate/core';
+import { TripOfDayComponent } from "../trip-of-day/trip-of-day.component";
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,7 @@ import { TranslatePipe } from '@ngx-translate/core';
     FilterBoxComponent,
     MatProgressSpinnerModule,
     MatIconModule,
-    TranslatePipe
+    TripOfDayComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

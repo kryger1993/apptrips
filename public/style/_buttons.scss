@@ -16,6 +16,12 @@ button {
     outline: 2px solid #4e7ac5;
     outline-offset: 2px;
   }
+
+  &.disabled {
+    background-color: gray;
+    cursor: default;
+    pointer-events: none;
+  }
 }
 
 a {

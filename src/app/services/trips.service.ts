@@ -21,7 +21,7 @@ export class TripsService {
 
   // #endregion Constructors (1)
 
-  // #region Public Methods (3)
+  // #region Public Methods (4)
 
   public convertTripFromBeToFe(item: TripDto): Trip {
     return {
@@ -40,6 +40,11 @@ export class TripsService {
     };
   }
 
+  public getRandomTrip(): Observable<TripDto> {
+    const url = `https://iy3ipnv3uc.execute-api.eu-west-1.amazonaws.com/Prod/v1/trips/random/trip-of-the-day`;
+    return this.http.get<TripDto>(url);
+  }
+
   public getTripDetail(id: string): Observable<TripDto> {
     const url = `https://iy3ipnv3uc.execute-api.eu-west-1.amazonaws.com/Prod/v1/trips/${id}`;
     return this.http.get<TripDto>(url);
@@ -53,5 +58,5 @@ export class TripsService {
     return this.http.get<AllTripsResponse>(url);
   }
 
-  // #endregion Public Methods (3)
+  // #endregion Public Methods (4)
 }

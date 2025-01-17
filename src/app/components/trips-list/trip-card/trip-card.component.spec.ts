@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TripCardComponent } from './trip-card.component';
 import { provideRouter } from '@angular/router';
 import { TripsDetailComponent } from '../../trips-detail/trips-detail.component';
-import { By } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('TripCardComponent', () => {
   let component: TripCardComponent;
@@ -30,7 +30,8 @@ describe('TripCardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        TripCardComponent
+        TripCardComponent,
+        TranslateModule.forRoot({})
       ],
       providers: [
         provideRouter([{ path: 'trips/:id', component: TripsDetailComponent }])

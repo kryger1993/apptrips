@@ -23,16 +23,26 @@
         font-size: 3.6rem;
         grid-row: 2;
         grid-column: 2;
+
+        &:first-of-type {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        &:last-of-type {
+          grid-column: 3;
+          grid-row: 3;
+        }
       }
 
-      :first-child {
-        grid-column: 1;
+      .logo-1 {
         grid-row: 1;
+        grid-column: 3;
       }
 
-      :last-child {
-        grid-column: 3;
+      .logo-2 {
         grid-row: 3;
+        grid-column: 1;
       }
     }
   }
@@ -67,6 +77,7 @@
 }
 
 @media (max-width: 1000px) {
+
   .main-content,
   .header-content {
     max-width: 100dvw;

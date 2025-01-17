@@ -1,7 +1,7 @@
 <div class="card">
   <div class="thumbnail">
     <a [routerLink]="['/trips/'+trip().id]">
-      <img [src]="trip().thumbnail" alt="Trip thumbnail" />
+      <img [src]="thumbnailImage" alt="Trip thumbnail" (error)="thumbnailImage = 'https://picsum.photos/200/200'" />
     </a>
   </div>
   <div class="title-tags-container">
@@ -10,6 +10,10 @@
     </a>
 
     <app-tags-list [tags]="trip().tags" [withText]="false"></app-tags-list>
+
+    <div class="creation-date">
+      {{'app.trip.creationLabel' | translate}} {{trip().creationDate | date}}
+    </div>
   </div>
   <div class="right-section">
     <div class="ratings-box">

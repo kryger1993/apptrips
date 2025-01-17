@@ -54,6 +54,18 @@ export class SortingBoxComponent {
       label: 'title',
       field: 'title',
       order: 'ASC'
+    },
+    {
+      id: 5,
+      label: 'ratingAsc',
+      field: 'rating',
+      order: 'ASC'
+    },
+    {
+      id: 6,
+      label: 'ratingDesc',
+      field: 'rating',
+      order: 'DESC'
     }
   ];
   public store = inject(TripsStore);

@@ -55,7 +55,9 @@ export class HomeComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.getTrips();
+    if (this.store.trips().length === 0) {
+      this.getTrips();
+    }
   }
 
   // #endregion Public Methods (2)

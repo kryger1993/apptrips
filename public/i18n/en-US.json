@@ -9,7 +9,9 @@
           "priceDesc": "Price (highest to lowest)",
           "dateAsc": "Creation date (old to new)",
           "dateDesc": "Creation date (new to old)",
-          "title": "Title (A-Z)"
+          "title": "Title (A-Z)",
+          "ratingAsc": "Rating (lowest to highest)",
+          "ratingDesc": "Rating (highest to lowest)"
         }
       }
     },
@@ -19,7 +21,8 @@
       "consumesIntro": "We care about our planet, trying our best to avoid any eccessive pollution when planning our trips.",
       "consumesText": "This trip consumes {{co2}} Co2.",
       "taxes": "All taxes included",
-      "buy": "Buy now"
+      "buy": "Buy now",
+      "creationLabel": "Active from: "
     }
   }
 }

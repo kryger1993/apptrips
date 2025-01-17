@@ -27,6 +27,7 @@ export class TripsDetailComponent implements OnInit, OnDestroy {
   public tripDetail!: Trip;
   public tripId = signal('');
   public store = inject(TripsStore);
+  public image!: string;
 
   // #endregion Properties (3)
 
@@ -41,6 +42,7 @@ export class TripsDetailComponent implements OnInit, OnDestroy {
         take(1),
         tap(trip => {
           this.tripDetail = trip;
+          this.image = trip.image;
           this.store.updateLoading(false);
         })
       ).subscribe();

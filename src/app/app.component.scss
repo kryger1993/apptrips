@@ -50,6 +50,11 @@
   .app-title {
     h1 {
       font-size: 5rem;
+
+      ::ng-deep .monoton {
+        font-family: Monoton, sans-serif;
+        font-weight: 500;
+      }
     }
 
     align-content: center;

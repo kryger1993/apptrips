@@ -1,0 +1,28 @@
+{
+  "app": {
+    "title": "<span class=\"monoton\">W</span>orld<span class=\"monoton\">A</span>round",
+    "sidenav": {
+      "sortingBox": {
+        "label": "Ordina",
+        "options": {
+          "priceAsc": "Prezzo (più bassi prima)",
+          "priceDesc": "Prezzo (più alti prima)",
+          "dateAsc": "Data di creazione (più vecchi prima)",
+          "dateDesc": "Data di creazione (più nuovi prima)",
+          "title": "Titolo (A-Z)",
+          "ratingAsc": "Valutazione (più bassa prima)",
+          "ratingDesc": "Valutazione (più alta prima)"
+        }
+      }
+    },
+    "trip": {
+      "back": "Torna alla lista",
+      "review": "Basato su {{reviewNumber}} recensioni.",
+      "consumesIntro": "Teniamo molto alla salute del nostro pianeta, per quest cerchiamo di fare il nostro meglio per evitare inquinamento eccessivo quando organizziamo i nostri viaggi.",
+      "consumesText": "Questo viaggio consuma {{co2}} Co2.",
+      "taxes": "Tasse incluse",
+      "buy": "Compra ora",
+      "creationLabel": "Attivo dal: "
+    }
+  }
+}

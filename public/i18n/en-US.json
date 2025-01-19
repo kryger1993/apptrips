@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "WorldAround",
+    "title": "<span class=\"monoton\">W</span>orld<span class=\"monoton\">A</span>round",
     "sidenav": {
       "sortingBox": {
         "label": "Sort by",

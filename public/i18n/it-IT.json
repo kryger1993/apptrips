@@ -22,7 +22,14 @@
       "consumesText": "Questo viaggio consuma {{co2}} Co2.",
       "taxes": "Tasse incluse",
       "buy": "Compra ora",
-      "creationLabel": "Attivo dal: "
+      "creationLabel": "Attivo dal: ",
+      "score": {
+        "title": "<span class=\"monoton\">W</span>orld<span class=\"monoton\">A</span>round quality index",
+        "description": "Per cercare di offrirvi un servizio sempre all'altezza delle aspettative ad ogni nostro viaggio viene attribuito un indice di qualità, contato prendendo in esame questi requisiti:",
+        "rating": "Punteggio recensioni - la vostra opinione è quella che conta di più!",
+        "reviews": "Numero di recensioni - più recensioni ci sono, più accurato è il voto finale.",
+        "co2": "Emissioni - meno è meglio, per un mondo più pulito!"
+      }
     }
   }
 }

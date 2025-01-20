@@ -1,0 +1,38 @@
+.score {
+  display: flex;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 1rem;
+
+  &.awesome {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    border: 2px solid gold;
+    border-radius: 8px;
+    color: gold;
+    background-color: rgba(255, 215, 0, 0.15);
+  }
+
+  &.good {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    border: 2px solid silver;
+    border-radius: 8px;
+    color: silver;
+    background-color: rgba(192, 192, 192, 0.15);
+  }
+
+  &.average {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    border: 2px solid #cd7f32;
+    border-radius: 8px;
+    color: #cd7f32;
+    background-color: rgba(205, 127, 50, 0.15);
+  }
+}

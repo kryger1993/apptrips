@@ -31,6 +31,24 @@
 
         <app-tags-list [tags]="tripDetail.tags"></app-tags-list>
 
+
+        <div class="score-section">
+          <div class="score-title" [innerHTML]="'app.trip.score.title' | translate"></div>
+
+          <div class="text">
+            <div class="index-criterion">{{"app.trip.score.rating" | translate}}</div>
+            <div class="index-criterion">{{"app.trip.score.reviews" | translate}}</div>
+            <div class="index-criterion">{{"app.trip.score.co2" | translate}}</div>
+          </div>
+
+          <div class="score-badge">
+            <app-score-badge [rating]="tripDetail.rating" [ratingsNumber]="tripDetail.nrOfRatings"
+              [co2]="tripDetail.co2"></app-score-badge>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-section">
         <div class="co2-info">
           <p>
             {{'app.trip.consumesIntro' | translate}}
@@ -39,18 +57,17 @@
             {{ 'app.trip.consumesText' | translate:{co2:tripDetail.co2} }}
           </div>
         </div>
-      </div>
-
-      <div class="price-and-buy">
-        <span class="price">
-          € {{tripDetail.price}}
-        </span>
-        <span class="taxes-info">
-          {{'app.trip.taxes' | translate}}
-        </span>
-        <button>
-          {{'app.trip.buy' | translate}}
-        </button>
+        <div class="price-and-buy">
+          <span class="price">
+            € {{tripDetail.price}}
+          </span>
+          <span class="taxes-info">
+            {{'app.trip.taxes' | translate}}
+          </span>
+          <button>
+            {{'app.trip.buy' | translate}}
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -5,9 +5,11 @@
     </a>
   </div>
   <div class="title-tags-container">
-    <a class="title" [routerLink]="['/trips/'+trip().id]">
-      {{trip().title}}
-    </a>
+    <div class="title-score">
+      <a class="title" [routerLink]="['/trips/'+trip().id]">
+        {{trip().title}}
+      </a>
+    </div>
 
     <app-tags-list [tags]="trip().tags" [withText]="false"></app-tags-list>
 

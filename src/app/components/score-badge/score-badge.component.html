@@ -1,1 +1,19 @@
-<p>score-badge works!</p>
+@if(score > 70) {
+<span class="score awesome">
+  Awesome
+  <mat-icon [inline]="true" fontSet="material-symbols-outlined">star_border</mat-icon>
+  <mat-icon [inline]="true" fontSet="material-symbols-outlined">star_border</mat-icon>
+  <mat-icon [inline]="true" fontSet="material-symbols-outlined">star_border</mat-icon>
+</span>
+} @else if (score > 40) {
+<span class="score good">
+  Good
+  <mat-icon [inline]="true" fontSet="material-symbols-outlined">star_border</mat-icon>
+  <mat-icon [inline]="true" fontSet="material-symbols-outlined">star_border</mat-icon>
+</span>
+} @else {
+<span class="score average">
+  Average
+  <mat-icon [inline]="true" fontSet="material-symbols-outlined">star_border</mat-icon>
+</span>
+}

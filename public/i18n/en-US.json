@@ -3,26 +3,33 @@
     "title": "<span class=\"monoton\">W</span>orld<span class=\"monoton\">A</span>round",
     "sidenav": {
       "sortingBox": {
-        "label": "Sort by",
+        "label": "Sort",
         "options": {
-          "priceAsc": "Price (lowest to highest)",
-          "priceDesc": "Price (highest to lowest)",
-          "dateAsc": "Creation date (old to new)",
-          "dateDesc": "Creation date (new to old)",
+          "priceAsc": "Price (lowest first)",
+          "priceDesc": "Price (highest first)",
+          "dateAsc": "Creation date (oldest first)",
+          "dateDesc": "Creation date (newest first)",
           "title": "Title (A-Z)",
-          "ratingAsc": "Rating (lowest to highest)",
-          "ratingDesc": "Rating (highest to lowest)"
+          "ratingAsc": "Rating (lowest first)",
+          "ratingDesc": "Rating (highest first)"
         }
       }
     },
     "trip": {
-      "back": "Back to list",
+      "back": "Back to the list",
       "review": "Based on {{reviewNumber}} reviews.",
-      "consumesIntro": "We care about our planet, trying our best to avoid any eccessive pollution when planning our trips.",
+      "consumesIntro": "We care deeply about the health of our planet, so we do our best to avoid excessive pollution when organizing our trips.",
       "consumesText": "This trip consumes {{co2}} Co2.",
-      "taxes": "All taxes included",
+      "taxes": "Taxes included",
       "buy": "Buy now",
-      "creationLabel": "Active from: "
+      "creationLabel": "Active since: ",
+      "score": {
+        "title": "<span class=\"monoton\">W</span>orld<span class=\"monoton\">A</span>round quality index",
+        "description": "To ensure we always meet your expectations, every trip is assigned a quality index based on the following criteria:",
+        "rating": "Review score - your opinion matters the most!",
+        "reviews": "Number of reviews - the more reviews, the more accurate the final score.",
+        "co2": "Emissions - less is better for a cleaner world!"
+      }
     }
   }
 }

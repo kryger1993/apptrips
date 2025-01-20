@@ -69,41 +69,78 @@
       .mix-info {
         display: flex;
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 7rem;
         padding: 1.6rem;
 
-        .description {
-          font-size: 2rem;
-          margin-bottom: 2rem;
+        .score-section {
+          border: 2px solid #00bcd6;
+          padding: 1.6rem;
+          border-radius: 0.4rem;
+          font-size: 1.4rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+
+          .score-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #3560ab;
+            line-height: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #3560ab;
+          }
+
+          ::ng-deep .monoton {
+            font-family: Monoton, sans-serif;
+          }
+
+          .text {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 1.8rem;
+          }
+
+          .score-badge {
+            display: flex;
+            justify-content: center;
+          }
         }
+      }
+
+      .bottom-section {
+        display: flex;
+        justify-content: space-between;
 
         .co2-info {
           border: 2px solid #3560ab;
           padding: 1.6rem;
           border-radius: 0.4rem;
           font-size: 1.4rem;
+          flex: 2;
 
           .co2-consume {
             margin-top: 1.6rem;
           }
         }
-      }
 
-      .price-and-buy {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        align-items: flex-end;
+        .price-and-buy {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          align-items: flex-end;
+          flex: 1;
 
-        .price {
-          font-size: 3rem;
-          font-weight: 600;
-          color: #00bcd6;
-        }
+          .price {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #00bcd6;
+          }
 
-        .taxes-info {
-          color: grey;
-          font-size: 1.2rem;
+          .taxes-info {
+            color: grey;
+            font-size: 1.2rem;
+          }
         }
       }
     }

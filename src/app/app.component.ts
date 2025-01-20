@@ -4,14 +4,14 @@ import { TripsStore } from './stores/trips.store';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { MatIconModule } from '@angular/material/icon';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     RouterOutlet,
     MatProgressSpinnerModule,
-    MatIconModule,
-    TranslatePipe
+    HeaderComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

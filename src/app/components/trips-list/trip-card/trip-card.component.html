@@ -14,7 +14,7 @@
     <app-tags-list [tags]="trip().tags" [withText]="false"></app-tags-list>
 
     <div class="creation-date">
-      {{'app.trip.creationLabel' | translate}} {{trip().creationDate | date}}
+      {{'app.trip.creationLabel' | translate}} {{trip().creationDate | date:'medium'}}
     </div>
   </div>
   <div class="right-section">

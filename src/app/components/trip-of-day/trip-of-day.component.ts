@@ -3,11 +3,13 @@ import { TripsService } from '../../services/trips.service';
 import { Subject, takeUntil, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-trip-of-day',
   imports: [
-    CommonModule
+    CommonModule,
+    TranslatePipe
   ],
   templateUrl: './trip-of-day.component.html',
   styleUrl: './trip-of-day.component.scss'

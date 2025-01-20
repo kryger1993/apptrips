@@ -1,0 +1,10 @@
+<div class="switch-container">
+  @for(lang of languages; track $index) {
+  <div class="lang-selector">
+    <button type="button" class="secondary" [ngClass]="lang === currentLang() ? 'selected' : ''"
+      (click)="changeLang(lang)">
+      {{'app.languages.'+lang | translate}}
+    </button>
+  </div>
+  }
+</div>

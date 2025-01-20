@@ -1,8 +1,11 @@
 import { Component, input } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-tags-list',
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './tags-list.component.html',
   styleUrl: './tags-list.component.scss'
 })

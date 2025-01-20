@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { TagsListComponent } from '../../tags-list/tags-list.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
+import { ScoreBadgeComponent } from '../../score-badge/score-badge.component';
 
 @Component({
   selector: 'app-trip-card',

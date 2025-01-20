@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { TripsStore } from '../../stores/trips.store';
 import { TagsListComponent } from '../tags-list/tags-list.component';
 import { TranslatePipe } from '@ngx-translate/core';
+import { ScoreBadgeComponent } from '../score-badge/score-badge.component';
 
 @Component({
   selector: 'app-trips-detail',
@@ -14,7 +15,8 @@ import { TranslatePipe } from '@ngx-translate/core';
     RouterModule,
     MatIconModule,
     TagsListComponent,
-    TranslatePipe
+    TranslatePipe,
+    ScoreBadgeComponent
   ],
   templateUrl: './trips-detail.component.html',
   styleUrl: './trips-detail.component.scss'
@@ -28,15 +30,14 @@ export class TripsDetailComponent implements OnInit, OnDestroy {
   public tripId = signal('');
   public store = inject(TripsStore);
   public image!: string;
+  private tripsService = inject(TripsService);
+  private route = inject(ActivatedRoute);
 
   // #endregion Properties (3)
 
   // #region Constructors (1)
 
-  constructor(
-    private tripsService: TripsService,
-    private route: ActivatedRoute
-  ) {
+  constructor() {
     effect(() => {
       this.getTripDetail(this.tripId()).pipe(
         take(1),

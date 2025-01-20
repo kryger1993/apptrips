@@ -10,10 +10,13 @@ describe('ScoreBadgeComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ScoreBadgeComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ScoreBadgeComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('co2', 300);
+    fixture.componentRef.setInput('ratingsNumber', 400);
+    fixture.componentRef.setInput('rating', 4.3);
     fixture.detectChanges();
   });
 

@@ -1,0 +1,13 @@
+.switch-container {
+  display: flex;
+  font-size: 2.5rem;
+  color: #00bcd6;
+
+  .lang-selector {
+    padding: 1.3rem 1.6rem;
+
+    &:last-of-type {
+      border-left: 2px solid #00bcd6;
+    }
+  }
+}

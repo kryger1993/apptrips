@@ -1,3 +1,4 @@
 <div class="container">
-  <button [ngClass]="{disabled: !tripOfDayId}" (click)="goToDetail()">Discover the trip of the day</button>
+  <button type="button" [ngClass]="{disabled: !tripOfDayId}" (click)="goToDetail()">{{'app.tripOfDay' |
+    translate}}</button>
 </div>

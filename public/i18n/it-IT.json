@@ -23,6 +23,7 @@
       "taxes": "Tasse incluse",
       "buy": "Compra ora",
       "creationLabel": "Attivo dal: ",
+      "tagsText": "I nostri clienti dicono che sia uno dei migliori per:",
       "score": {
         "title": "<span class=\"monoton\">W</span>orld<span class=\"monoton\">A</span>round quality index",
         "description": "Per cercare di offrirvi un servizio sempre all'altezza delle aspettative ad ogni nostro viaggio viene attribuito un indice di qualità, contato prendendo in esame questi requisiti:",
@@ -30,6 +31,11 @@
         "reviews": "Numero di recensioni - più recensioni ci sono, più accurato è il voto finale.",
         "co2": "Emissioni - meno è meglio, per un mondo più pulito!"
       }
-    }
+    },
+    "languages": {
+      "it-IT": "IT",
+      "en-US": "EN"
+    },
+    "tripOfDay": "Scopri il viaggio del giorno"
   }
 }

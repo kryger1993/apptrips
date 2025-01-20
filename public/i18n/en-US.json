@@ -23,6 +23,7 @@
       "taxes": "Taxes included",
       "buy": "Buy now",
       "creationLabel": "Active since: ",
+      "tagsText": "Our costumers say this is one of the best for:",
       "score": {
         "title": "<span class=\"monoton\">W</span>orld<span class=\"monoton\">A</span>round quality index",
         "description": "To ensure we always meet your expectations, every trip is assigned a quality index based on the following criteria:",
@@ -30,6 +31,11 @@
         "reviews": "Number of reviews - the more reviews, the more accurate the final score.",
         "co2": "Emissions - less is better for a cleaner world!"
       }
-    }
+    },
+    "languages": {
+      "it-IT": "IT",
+      "en-US": "EN"
+    },
+    "tripOfDay": "Discover the trip of the day"
   }
 }

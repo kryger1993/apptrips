@@ -28,8 +28,12 @@ export class AppComponent {
 
   constructor() {
     this.translate.addLangs(['en-US', 'it-IT']);
-    this.translate.setDefaultLang('en-US');
-    this.translate.use('en-US');
+    let defaultLang = 'en-US';
+    if (localStorage.getItem('language')) {
+      defaultLang = localStorage.getItem('language')!;
+    }
+    this.translate.setDefaultLang(defaultLang);
+    this.translate.use(defaultLang);
   }
 
   // #endregion Constructors (1)
